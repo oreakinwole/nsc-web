@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
+:root {
+  --color-primary: 23 185 120;
+  --color-secondary: 248 143 194;
+  --color-green: 140 214 106;
+  --color-bg: 255 255 255;
+  --color-border: 255 255 255;
+  --color-box: 255 255 255;
+  --box-border: 229 231 235;
+  --box-sd: 226 232 240 / 0.5;
+}
+
+.dark {
+  --color-bg: 17 24 39; /* gray-900 */
+  --color-box: 17 26 62; /* k    55 65 81 */
+  --box-border: 243 244 246/0.1;
+  --box-sd: transparent;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Neon Glow";
+  src: url(https://assets.codepen.io/230569/NeonGlow-8VLz.ttf);
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-body transition overflow-x-hidden;
+
+  font-family: "Inter", sans-serif;
+  /* background-color: #fcfbfa; */
+}
+
+/* .landing-container {
+  cursor: url("@/assets/images/process_cursor_small.svg"), auto;
+} */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.invisible-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-padding-left: 10px;
+  scroll-padding-right: 10px;
+}
+
+.invisible-scroll::-webkit-scrollbar {
+  display: none;
+}
