@@ -19,31 +19,31 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#" class="text-gray-color hover:text-primary transition-colors font-medium">
+          <a @click="navigateToSection('/')" class="text-gray-color hover:text-primary transition-colors font-medium cursor-pointer">
             Home
           </a>
-          <a href="#properties" class="text-gray-color hover:text-primary transition-colors font-medium">
+          <a @click="navigateToSection('/#properties')" class="text-gray-color hover:text-primary transition-colors font-medium cursor-pointer">
             Properties
           </a>
-          <a href="#how-it-works" class="text-gray-color hover:text-primary transition-colors font-medium">
+          <a @click="navigateToSection('/#how-it-works')" class="text-gray-color hover:text-primary transition-colors font-medium cursor-pointer">
             How It Works
           </a>
-          <a href="#about" class="text-gray-color hover:text-primary transition-colors font-medium">
+          <a @click="navigateToSection('/#about')" class="text-gray-color hover:text-primary transition-colors font-medium cursor-pointer">
             About
           </a>
-          <a href="#contact" class="text-gray-color hover:text-primary transition-colors font-medium">
+          <a @click="navigateToSection('/#contact')" class="text-gray-color hover:text-primary transition-colors font-medium cursor-pointer">
             Contact
           </a>
         </div>
 
         <!-- Action Buttons -->
         <div class="hidden md:flex items-center space-x-4">
-          <button class="text-primary hover:text-primary-dark font-semibold transition-colors">
+          <NuxtLink to="/create-listing" class="text-primary hover:text-primary-dark font-semibold transition-colors">
             List Property
-          </button>
-          <button class="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105">
+          </NuxtLink>
+          <NuxtLink to="/login" class="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105">
             Sign In
-          </button>
+          </NuxtLink>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -79,28 +79,28 @@
       class="md:hidden bg-white border-t border-gray-light"
     >
       <div class="px-4 pt-2 pb-4 space-y-3">
-        <a href="#" class="block text-gray-color hover:text-primary transition-colors font-medium py-2">
+        <a @click="navigateToSection('/')" class="block text-gray-color hover:text-primary transition-colors font-medium py-2 cursor-pointer">
           Home
         </a>
-        <a href="#properties" class="block text-gray-color hover:text-primary transition-colors font-medium py-2">
+        <a @click="navigateToSection('/#properties')" class="block text-gray-color hover:text-primary transition-colors font-medium py-2 cursor-pointer">
           Properties
         </a>
-        <a href="#how-it-works" class="block text-gray-color hover:text-primary transition-colors font-medium py-2">
+        <a @click="navigateToSection('/#how-it-works')" class="block text-gray-color hover:text-primary transition-colors font-medium py-2 cursor-pointer">
           How It Works
         </a>
-        <a href="#about" class="block text-gray-color hover:text-primary transition-colors font-medium py-2">
+        <a @click="navigateToSection('/#about')" class="block text-gray-color hover:text-primary transition-colors font-medium py-2 cursor-pointer">
           About
         </a>
-        <a href="#contact" class="block text-gray-color hover:text-primary transition-colors font-medium py-2">
+        <a @click="navigateToSection('/#contact')" class="block text-gray-color hover:text-primary transition-colors font-medium py-2 cursor-pointer">
           Contact
         </a>
         <div class="pt-4 space-y-2">
-          <button class="w-full text-primary hover:text-primary-dark font-semibold py-2 border border-primary rounded-lg transition-colors">
+          <NuxtLink to="/create-listing" class="block w-full text-center text-primary hover:text-primary-dark font-semibold py-2 border border-primary rounded-lg transition-colors">
             List Property
-          </button>
-          <button class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-2 rounded-lg transition-colors">
+          </NuxtLink>
+          <NuxtLink to="/login" class="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold py-2 rounded-lg transition-colors">
             Sign In
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -110,5 +110,39 @@
 <script setup>
 import { ref } from 'vue'
 
+const router = useRouter()
+const route = useRoute()
 const mobileMenuOpen = ref(false)
+
+const navigateToSection = async (path) => {
+  // Close mobile menu if open
+  mobileMenuOpen.value = false
+
+  // If path includes a hash (section)
+  if (path.includes('#')) {
+    const [pagePath, hash] = path.split('#')
+
+    // If we're already on the home page
+    if (route.path === pagePath || route.path === '/') {
+      // Just scroll to the section
+      const element = document.getElementById(hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else {
+      // Navigate to home page first, then scroll
+      await router.push(pagePath || '/')
+      // Wait for navigation and DOM update
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    }
+  } else {
+    // Just navigate to the page
+    router.push(path)
+  }
+}
 </script>
