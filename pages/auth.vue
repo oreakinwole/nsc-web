@@ -44,9 +44,24 @@ const selectOption = (option) => {
 <style scoped>
 .auth-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
   font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(5, 196, 66, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(3, 122, 41, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 /* Single Header Styles */
@@ -85,36 +100,41 @@ const selectOption = (option) => {
 }
 
 .nav-links a:hover {
-  color: #667eea;
+  color: #049b35;
 }
 
 /* Main Content */
 .main-content {
   padding: 60px 20px;
-  max-width: 500px;
+  max-width: 550px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* Welcome Section */
 .welcome-section {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 50px 40px;
   margin-bottom: 30px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .welcome-header h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 12px;
   font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .welcome-header p {
-  font-size: 16px;
-  opacity: 0.9;
-  margin: 0 0 30px 0;
+  font-size: 17px;
+  opacity: 0.95;
+  margin: 0 0 35px 0;
 }
 
 /* Account Selection */
@@ -125,53 +145,64 @@ const selectOption = (option) => {
 }
 
 .option-card {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid transparent;
-  border-radius: 12px;
-  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 35px 25px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   flex: 1;
-  max-width: 180px;
+  max-width: 190px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .option-card:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .option-card.active {
   border-color: white;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 .icon {
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 48px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .option-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Host Info Section */
 .host-info {
   text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .host-mode {
-  font-size: 16px;
-  opacity: 0.9;
+  font-size: 17px;
+  opacity: 0.95;
   margin-bottom: 10px;
   font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .listing-prompt {
-  font-size: 14px;
-  opacity: 0.8;
+  font-size: 15px;
+  opacity: 0.85;
   font-style: italic;
   margin: 0;
 }

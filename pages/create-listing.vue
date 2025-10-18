@@ -210,7 +210,7 @@ const submitForm = () => {
 }
 
 .nav-links a:hover {
-  color: #667eea;
+  color: #049b35;
 }
 
 /* Create Listing Content */
@@ -225,10 +225,10 @@ const submitForm = () => {
 /* Sidebar */
 .sidebar {
   width: 250px;
-  background: white;
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(4, 155, 53, 0.2);
   height: fit-content;
 }
 
@@ -242,7 +242,7 @@ const submitForm = () => {
 
 .step-info h3 {
   font-size: 14px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 5px;
   font-weight: 600;
   text-transform: uppercase;
@@ -250,8 +250,8 @@ const submitForm = () => {
 }
 
 .page-title {
-  font-size: 20px;
-  color: #333;
+  font-size: 22px;
+  color: white;
   font-weight: bold;
   margin: 0;
 }
@@ -262,7 +262,7 @@ const submitForm = () => {
   background: white;
   border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .form-header {
@@ -309,8 +309,8 @@ const submitForm = () => {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #049b35;
+  box-shadow: 0 0 0 3px rgba(4, 155, 53, 0.1);
 }
 
 .form-group textarea {
@@ -333,7 +333,7 @@ const submitForm = () => {
 
 /* Continue Button */
 .continue-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
   border: none;
   padding: 15px 40px;
@@ -348,7 +348,7 @@ const submitForm = () => {
 
 .continue-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(4, 155, 53, 0.4);
 }
 
 /* Responsive Design */

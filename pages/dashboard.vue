@@ -84,7 +84,7 @@ const createListing = () => {
 }
 
 .nav-links a:hover {
-  color: #667eea;
+  color: #049b35;
 }
 
 /* Dashboard Content */
@@ -102,8 +102,9 @@ const createListing = () => {
   background: white;
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   height: fit-content;
+  border: 1px solid rgba(4, 155, 53, 0.1);
 }
 
 .brand-name {
@@ -116,9 +117,9 @@ const createListing = () => {
 
 .sidebar-nav h3 {
   font-size: 16px;
-  color: #666;
+  color: #049b35;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -140,13 +141,14 @@ const createListing = () => {
 }
 
 .sidebar-nav li:hover {
-  background: #f0f0f0;
-  color: #333;
+  background: #f0fdf4;
+  color: #037a29;
 }
 
 .sidebar-nav li.active {
-  background: #667eea;
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
+  box-shadow: 0 2px 8px rgba(4, 155, 53, 0.3);
 }
 
 /* Main Area */
@@ -155,11 +157,12 @@ const createListing = () => {
   background: white;
   border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 400px;
+  border: 1px solid rgba(4, 155, 53, 0.1);
 }
 
 .empty-state {
@@ -168,39 +171,42 @@ const createListing = () => {
 }
 
 .empty-icon {
-  font-size: 64px;
-  margin-bottom: 20px;
+  font-size: 80px;
+  margin-bottom: 25px;
+  opacity: 0.9;
 }
 
 .empty-state h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-  font-weight: 600;
+  font-size: 26px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .empty-state p {
-  color: #666;
-  margin-bottom: 30px;
-  font-size: 16px;
-  line-height: 1.5;
+  color: #6b7280;
+  margin-bottom: 35px;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 .create-listing-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
   border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 14px 35px;
+  border-radius: 10px;
+  font-size: 17px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(4, 155, 53, 0.2);
 }
 
 .create-listing-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(4, 155, 53, 0.4);
+  background: linear-gradient(135deg, #05c442 0%, #049b35 100%);
 }
 
 /* Responsive Design */

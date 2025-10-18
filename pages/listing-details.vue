@@ -288,7 +288,7 @@ const addRule = () => {
 }
 
 .nav-links a:hover {
-  color: #667eea;
+  color: #049b35;
 }
 
 /* Create Listing Content */
@@ -303,10 +303,10 @@ const addRule = () => {
 /* Sidebar */
 .sidebar {
   width: 280px;
-  background: white;
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(4, 155, 53, 0.2);
   height: fit-content;
 }
 
@@ -320,7 +320,7 @@ const addRule = () => {
 
 .step-info h3 {
   font-size: 14px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 5px;
   font-weight: 600;
   text-transform: uppercase;
@@ -328,8 +328,8 @@ const addRule = () => {
 }
 
 .page-title {
-  font-size: 20px;
-  color: #333;
+  font-size: 22px;
+  color: white;
   font-weight: bold;
   margin: 0;
 }
@@ -340,7 +340,7 @@ const addRule = () => {
   background: white;
   border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .section {
@@ -392,9 +392,9 @@ const addRule = () => {
 .number-selector button {
   width: 40px;
   height: 40px;
-  border: 2px solid #667eea;
+  border: 2px solid #049b35;
   background: white;
-  color: #667eea;
+  color: #049b35;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -406,7 +406,7 @@ const addRule = () => {
 }
 
 .number-selector button:hover {
-  background: #667eea;
+  background: #049b35;
   color: white;
 }
 
@@ -432,7 +432,7 @@ const addRule = () => {
 }
 
 .amenity-title {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
   padding: 18px 20px;
   margin: 0;
@@ -443,7 +443,7 @@ const addRule = () => {
 }
 
 .amenity-title:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  background: linear-gradient(135deg, #05c442 0%, #049b35 100%);
 }
 
 .amenity-content {
@@ -470,7 +470,7 @@ const addRule = () => {
 .checkbox-item input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: #667eea;
+  accent-color: #049b35;
 }
 
 .price-input {
@@ -518,7 +518,7 @@ const addRule = () => {
 
 .add-btn {
   padding: 10px 20px;
-  background: #667eea;
+  background: #049b35;
   color: white;
   border: none;
   border-radius: 6px;
@@ -528,7 +528,7 @@ const addRule = () => {
 }
 
 .add-btn:hover {
-  background: #5a6fd8;
+  background: #037a29;
 }
 
 .price-note {
@@ -556,7 +556,7 @@ const addRule = () => {
 .radio-item input[type="radio"] {
   width: 18px;
   height: 18px;
-  accent-color: #667eea;
+  accent-color: #049b35;
 }
 
 /* Step Buttons */
@@ -569,9 +569,9 @@ const addRule = () => {
 
 .back-btn {
   padding: 15px 40px;
-  border: 2px solid #667eea;
+  border: 2px solid #049b35;
   background: white;
-  color: #667eea;
+  color: #049b35;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
@@ -580,13 +580,13 @@ const addRule = () => {
 }
 
 .back-btn:hover {
-  background: #667eea;
+  background: #049b35;
   color: white;
 }
 
 .continue-btn {
   padding: 15px 40px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -598,7 +598,7 @@ const addRule = () => {
 
 .continue-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(4, 155, 53, 0.4);
 }
 
 /* Responsive Design */

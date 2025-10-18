@@ -81,46 +81,7 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Nigerian Shortlet Community</h3>
-          <p>Your trusted Nigerian community for comfortable and affordable shortlet rentals across the country.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="/">Home</a>
-            <a href="/properties">Properties</a>
-            <a href="/how-it-works">How It Works</a>
-            <a href="/about">About Us</a>
-            <a href="/blog">Blog</a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Support</h4>
-          <div class="footer-links">
-            <a href="/help">Help Center</a>
-            <a href="/faqs">FAQs</a>
-            <a href="/contact">Contact Us</a>
-            <a href="/terms">Terms & Conditions</a>
-            <a href="/privacy">Privacy Policy</a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contact Us</h4>
-          <div class="contact-info">
-            <p>📍 Lagos, Nigeria</p>
-            <p>📧 info@nsc.ng</p>
-            <p>📞 +234 901 222 0000</p>
-          </div>
-        </div>
-      </div>
-    </div>
+   
   </div>
 </template>
 
@@ -198,7 +159,7 @@ const submitListing = () => {
 }
 
 .nav-links a:hover {
-  color: #667eea;
+  color: #049b35;
 }
 
 /* Create Listing Content */
@@ -214,10 +175,10 @@ const submitListing = () => {
 /* Sidebar */
 .sidebar {
   width: 280px;
-  background: white;
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(4, 155, 53, 0.2);
   height: fit-content;
 }
 
@@ -231,7 +192,7 @@ const submitListing = () => {
 
 .step-info h3 {
   font-size: 14px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 5px;
   font-weight: 600;
   text-transform: uppercase;
@@ -239,8 +200,8 @@ const submitListing = () => {
 }
 
 .page-title {
-  font-size: 20px;
-  color: #333;
+  font-size: 22px;
+  color: white;
   font-weight: bold;
   margin: 0;
 }
@@ -251,7 +212,7 @@ const submitListing = () => {
   background: white;
   border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .section {
@@ -295,8 +256,8 @@ const submitListing = () => {
 }
 
 .upload-area:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
+  border-color: #049b35;
+  background: #f0fdf4;
 }
 
 .upload-icon {
@@ -344,8 +305,8 @@ const submitListing = () => {
 
 .video-input input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #049b35;
+  box-shadow: 0 0 0 3px rgba(4, 155, 53, 0.1);
 }
 
 /* Pricing Grid */
@@ -379,8 +340,8 @@ const submitListing = () => {
 
 .price-input-wrapper input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #049b35;
+  box-shadow: 0 0 0 3px rgba(4, 155, 53, 0.1);
 }
 
 .fee-note {
@@ -400,9 +361,9 @@ const submitListing = () => {
 
 .back-btn {
   padding: 15px 40px;
-  border: 2px solid #667eea;
+  border: 2px solid #049b35;
   background: white;
-  color: #667eea;
+  color: #049b35;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
@@ -411,13 +372,13 @@ const submitListing = () => {
 }
 
 .back-btn:hover {
-  background: #667eea;
+  background: #049b35;
   color: white;
 }
 
 .submit-btn {
   padding: 15px 40px;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  background: linear-gradient(135deg, #049b35 0%, #037a29 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -429,7 +390,7 @@ const submitListing = () => {
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  box-shadow: 0 4px 15px rgba(4, 155, 53, 0.4);
 }
 
 /* Footer */
@@ -479,7 +440,7 @@ const submitListing = () => {
 }
 
 .footer-links a:hover {
-  color: #667eea;
+  color: #05c442;
 }
 
 .contact-info p {
