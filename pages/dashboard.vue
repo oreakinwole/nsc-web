@@ -32,11 +32,11 @@
 </template>
 
 <script setup>
+const router = useRouter()
 const activeTab = ref('all')
 
 const createListing = () => {
-  // Add your create listing logic here
-  console.log('Create new listing clicked')
+  router.push('/create-listing')
 }
 </script>
 

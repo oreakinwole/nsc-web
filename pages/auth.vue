@@ -33,11 +33,20 @@
 </template>
 
 <script setup>
+const router = useRouter()
 const selectedOption = ref(null)
 
 const selectOption = (option) => {
   selectedOption.value = option
-  // You can add navigation logic here based on the selection
+
+  // Navigate based on selection
+  setTimeout(() => {
+    if (option === 'host') {
+      router.push('/dashboard')
+    } else {
+      router.push('/')
+    }
+  }, 800) // Small delay for visual feedback
 }
 </script>
 

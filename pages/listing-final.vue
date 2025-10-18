@@ -107,11 +107,13 @@ const handleImageUpload = (event) => {
   console.log('Images uploaded:', form.value.images.length)
 }
 
+const router = useRouter()
+
 const submitListing = () => {
   console.log('Listing submitted:', form.value)
   // Add your submission logic here
   alert('Listing submitted successfully!')
-  // $router.push('/dashboard')
+  router.push('/dashboard')
 }
 </script>
 

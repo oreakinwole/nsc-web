@@ -1,7 +1,12 @@
 <template>
   <section class="relative bg-gradient-to-br from-primary/10 to-white min-h-screen flex items-center">
     <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute inset-0 bg-white/80"></div>
+      <img
+        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&h=1080&fit=crop"
+        alt="Beautiful apartment interior"
+        class="w-full h-full object-cover"
+      >
+      <div class="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-primary/20"></div>
     </div>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -22,6 +27,7 @@
               <label class="block text-sm font-semibold text-gray-color mb-2 text-left">Location</label>
               <input
                 type="text"
+                v-model="searchLocation"
                 placeholder="Where are you going?"
                 class="w-full px-4 py-3 border-2 border-gray-light rounded-lg focus:border-primary focus:outline-none transition-colors"
               >
@@ -31,6 +37,7 @@
               <label class="block text-sm font-semibold text-gray-color mb-2 text-left">Check In</label>
               <input
                 type="date"
+                v-model="checkIn"
                 class="w-full px-4 py-3 border-2 border-gray-light rounded-lg focus:border-primary focus:outline-none transition-colors"
               >
             </div>
@@ -39,12 +46,13 @@
               <label class="block text-sm font-semibold text-gray-color mb-2 text-left">Check Out</label>
               <input
                 type="date"
+                v-model="checkOut"
                 class="w-full px-4 py-3 border-2 border-gray-light rounded-lg focus:border-primary focus:outline-none transition-colors"
               >
             </div>
 
             <div class="md:col-span-1 flex items-end">
-              <button class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button @click="handleSearch" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Search
               </button>
             </div>
@@ -72,6 +80,23 @@
 </template>
 
 <script setup>
+const router = useRouter()
+
+const searchLocation = ref('')
+const checkIn = ref('')
+const checkOut = ref('')
+
+const handleSearch = () => {
+  const query = {}
+  if (searchLocation.value) query.location = searchLocation.value
+  if (checkIn.value) query.checkIn = checkIn.value
+  if (checkOut.value) query.checkOut = checkOut.value
+
+  router.push({
+    path: '/search',
+    query
+  })
+}
 </script>
 
 <style scoped>

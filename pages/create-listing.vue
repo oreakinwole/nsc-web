@@ -159,10 +159,13 @@ const getLGAs = () => {
   return lgasByState[form.value.state] || []
 }
 
+const router = useRouter()
+
 // Form submission
 const submitForm = () => {
   console.log('Form submitted:', form.value)
-  // Add your form submission logic here
+  // Navigate to next step
+  router.push('/listing-details')
 }
 </script>
 

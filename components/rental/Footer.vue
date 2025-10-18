@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-secondary text-white pt-16 pb-8">
+  <footer class="bg-secondary text-white pt-16 pb-8" id="contact">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         <!-- Company Info -->
@@ -41,10 +41,10 @@
         <div>
           <h3 class="text-lg font-bold mb-4">Quick Links</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="#properties" class="text-gray-400 hover:text-primary transition-colors">Properties</a></li>
-            <li><a href="#how-it-works" class="text-gray-400 hover:text-primary transition-colors">How It Works</a></li>
-            <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+            <li><a @click="navigateToSection('/')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Home</a></li>
+            <li><a @click="navigateToSection('/#properties')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Properties</a></li>
+            <li><a @click="navigateToSection('/#how-it-works')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">How It Works</a></li>
+            <li><a @click="navigateToSection('/#about')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">About Us</a></li>
             <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Blog</a></li>
           </ul>
         </div>
@@ -98,4 +98,35 @@
 </template>
 
 <script setup>
+const router = useRouter()
+const route = useRoute()
+
+const navigateToSection = async (path) => {
+  // If path includes a hash (section)
+  if (path.includes('#')) {
+    const [pagePath, hash] = path.split('#')
+
+    // If we're already on the home page
+    if (route.path === pagePath || route.path === '/') {
+      // Just scroll to the section
+      const element = document.getElementById(hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else {
+      // Navigate to home page first, then scroll
+      await router.push(pagePath || '/')
+      // Wait for navigation and DOM update
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    }
+  } else {
+    // Just navigate to the page
+    router.push(path)
+  }
+}
 </script>

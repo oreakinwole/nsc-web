@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 bg-gray-light">
+  <section class="py-20 bg-gray-light" id="properties">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -19,9 +19,9 @@
       </div>
 
       <div class="text-center mt-12">
-        <button class="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+        <NuxtLink to="/search" class="inline-block bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
           View All Properties
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>
@@ -37,7 +37,7 @@ const properties = ref([
     location: 'Lekki Phase 1, Lagos',
     price: 45000,
     rating: 4.9,
-    image: '/api/placeholder/400/300',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop',
     amenities: ['WiFi', 'Kitchen', 'Pool', 'Security']
   },
   {
@@ -46,7 +46,7 @@ const properties = ref([
     location: 'Victoria Island, Lagos',
     price: 35000,
     rating: 4.8,
-    image: '/api/placeholder/400/300',
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop',
     amenities: ['WiFi', 'Gym', 'Parking', 'AC']
   },
   {
@@ -55,7 +55,7 @@ const properties = ref([
     location: 'Ikoyi, Lagos',
     price: 65000,
     rating: 5.0,
-    image: '/api/placeholder/400/300',
+    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
     amenities: ['WiFi', 'Kitchen', 'Balcony', 'Security']
   },
   {
@@ -64,7 +64,7 @@ const properties = ref([
     location: 'Ikeja GRA, Lagos',
     price: 28000,
     rating: 4.7,
-    image: '/api/placeholder/400/300',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
     amenities: ['WiFi', 'Kitchen', 'Parking', 'AC']
   },
   {
@@ -73,7 +73,7 @@ const properties = ref([
     location: 'Banana Island, Lagos',
     price: 120000,
     rating: 5.0,
-    image: '/api/placeholder/400/300',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop',
     amenities: ['WiFi', 'Pool', 'Gym', 'Security']
   },
   {
@@ -82,7 +82,7 @@ const properties = ref([
     location: 'Yaba, Lagos',
     price: 22000,
     rating: 4.6,
-    image: '/api/placeholder/400/300',
+    image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&h=600&fit=crop',
     amenities: ['WiFi', 'Kitchen', 'Parking', 'AC']
   }
 ])
